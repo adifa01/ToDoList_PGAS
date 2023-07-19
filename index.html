@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./public/assets/css/style.css">
-    <title>Document</title>
+    <title>To do list Accueil</title>
 </head>
 
 <body>
@@ -26,26 +26,26 @@
     <nav id="navTab">
         <ul>
             <li id="tabPending" class="tabActive"><span>En cours</span><i class="fa-solid fa-spinner"></i></li>
-            <li id="tabCompleted" class=""><span>Complété</span><i class="fa-solid fa-check"></i></li>
+            <li id="tabCompleted" class=""><span>Terminées</span><i class="fa-solid fa-check"></i></li>
         </ul>
     </nav>
     <main>
         <section id="pending" class="sectionActive">
             <ul id="lists">
                 <li id="list_default">
-                    <a href="./public/assets/pages/task.html">
-                        <article>
-                            <div>
-                                <p id="nameList">Courses</p>
-                                <i class="fa-regular fa-heart"></i>
-                                <i class="fa-solid fa-pencil"></i>
-                                <i class="fa-regular fa-trash-can"></i>
-                            </div>
-                            <div class="progressBar-wrapper">
-                                <div class="progressBar"></div>
-                            </div>
-                        </article>
-                    </a>
+                    <article class="low">
+                        <div>
+                            <a href="./public/assets/pages/task.html">
+                                <p class="nameList">Courses</p>
+                            </a>
+                            <i class="fa-regular fa-heart disable"></i>
+                            <i class="fa-solid fa-pencil disable"></i>
+                            <i class="fa-regular fa-trash-can disable"></i>
+                        </div>
+                        <div class="progressBar-wrapper">
+                            <div class="progressBar"></div>
+                        </div>
+                    </article>
                 </li>
             </ul>
         </section>
@@ -54,7 +54,22 @@
     <div id="btnAdd">
         <button type="button" id="btnAddList"><span>Ajouter une liste</span><i class="fa-solid fa-plus"></i></button>
     </div>
-
+    <div id="modalAddList">
+        <div id="modalContent">
+            <div><i class="fa-solid fa-xmark"></i></div>
+            <div>
+                <label for="inputNameList">
+                    <input id="inputNameList" name="inputNameList" type="text" placeholder="nom de la liste">
+                </label>
+            </div>
+            <fieldset>
+                <legend>Selectionner priorité : </legend>
+                <p><input type="radio" id="high" name="priority" value="high" checked><label class="high" for=""> Haute</label></p>
+                <p><input type="radio" id="medium" name="priority" value="medium"><label class="medium" for=""> Medium</label></p>
+                <p><input type="radio" id="low" name="priority" value="low"><label class="low" for=""> Basse</label></p>
+            </fieldset>
+        </div>
+    </div>
 </body>
 
 </html>

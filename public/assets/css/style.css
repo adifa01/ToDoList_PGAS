@@ -1,29 +1,41 @@
 @import url("./reset.css");
 
 html {
-    font-size: 62.5%
+    font-size: 62.5%;
 }
 body {
     display: flex;
     flex-direction: column;
-    background-color: blue;
+    background: linear-gradient(180deg, rgb(0, 0, 0) 26.58%, rgb(126, 126, 126) 100%);
+    background-attachment: fixed;
     padding: 16px;
     font-size: 1.6rem;
     font-family: 'Oswald', sans-serif;
+
 }
 /* HEADER */
 header {
     font-size: 3.6rem;
     text-transform: uppercase;
     margin-bottom: 16px;
+    
 }
 header>nav>ul {
     display: flex;
     justify-content: space-between;
 }
-
-
-div#btnAdd {
+main#mainTask div{
+    display:flex ;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 16px;
+}
+hr{
+    margin-top: 16px;
+    margin-bottom: 16px;
+    margin-inline: 20%;
+}
+div#btnAdd{
     height: 48px;
     position: fixed;
     bottom: 16px;
@@ -32,18 +44,25 @@ div#btnAdd {
     display: flex;
     justify-content: center;
 }
-div#btnAdd > button {
-    padding-inline: 16px;
+#btnCollapsePending, #btnCollapseFinish{
+    background-color: #3E5D9C ;
+}
+#btnAddList{
+    background-color: rgba(0, 0, 0, 0.5);
     width: 80%;
+}
+div#btnAdd > button, div #btnCollapsePending, div #btnCollapseFinish {
+    padding-inline: 16px;
     display: flex;
     align-items: center;
-    border: 2px solid red;
-    border-radius: 8px;
+    border: 2px solid #CaCaCa;
+    border-radius: 10px;
     font-family: 'Oswald', sans-serif;
     text-transform: uppercase;
     font-size: 2.4rem;
+
 }
-div#btnAdd > button > span {
+div#btnAdd > button > span , #btnCollapsePending span, #btnCollapseFinish span{
     margin-inline: auto;
 }
 /* Navbar Tab */
@@ -78,33 +97,117 @@ article>:first-child {
     align-items: center;
     padding-block: 8px;
 }
-article p {
+article a {
+    width: 100%;
     margin-right: auto;
     padding-left: 16px;
 }
 article i{
     padding-right: 16px;
 }
-
+.taskColor{
+    background-color:#C0B376 ;
+}
 /* PROGRESS BAR */
 .progressBar-wrapper {
     height: 8px;
     width: 100%;
-    background-color: black;
+    background: #A4A4A4;
 }
 .progressBar {
     height: 8px;
-    /* width: 80%; update to js */
-    background-color: yellow;
+    width: 80%; 
+    background: rgba(255, 255, 255, 0.60);
 }
 
 /* PRIORITY LIST */
 .high {
-    background-color: red;
+    background-color: #FF0000;
 }
 .medium {
-    background-color: orange;
+    background-color: #AC9E1D;
 }
 .low {
-    background-color: green;
+    background-color: #0D7518;
+}
+
+/* ICON */
+.fa-trash-can, .fa-pencil, .fa-heart {
+    cursor: pointer;
+}
+.disable {
+    cursor: initial;
+    color: grey;
+}
+.fa-circle{
+    padding-left: 16px;
+}
+.rotate{
+    transform: rotate(-90deg);
+}
+/* Input */
+label{
+    margin-right: 16px;
+}
+.taskColor input{
+    color: black;
+    border: none;
+    background-color: #C0B376;
+    width: 100%;
+    font-size: 2.4rem;
+}
+
+.inputEmpty{
+    border-bottom: 2px solid black;
+}
+input:focus-visible{
+    outline: none;
+}
+
+/* MODAL */
+#modalAddList {
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    padding: 16px;
+}
+#modalContent {
+    height:70%;
+    background: linear-gradient(180deg, rgb(0, 0, 0) 26.58%, rgb(126, 126, 126) 100%);
+    border: 2px solid #CaCaCa;
+    margin-top: 20%;
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+}
+#modalContent>:first-child{
+    text-align: right;
+    font-size: 2.4rem;
+}
+#modalContent>div {
+    margin-bottom: 16px;
+}
+#inputNameList {
+    color: black;
+    border: none;
+    width: 100%;
+    font-size: 2.4rem;
+}   
+fieldset {
+    padding: 16px;
+}
+fieldset label {
+    margin-left: 8px;
+    display: inline-block;
+    width: 50%;
+}
+fieldset input {
+   
+}
+fieldset p {
+    margin-bottom: 16px;
+    /* font-size: 3rem; */
 }

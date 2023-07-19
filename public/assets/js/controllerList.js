@@ -11,9 +11,7 @@ export const createList = (nameList, priority) => {
     let liEl = document.createElement("li")
     liEl.id = list_id
   
-    let linkEl = document.createElement("a")
-    linkEl.href = "./public/assets/pages/task.html"
-    liEl.appendChild(linkEl)
+    
   
     let articleEl = document.createElement("article")
     if (priority == "high") {
@@ -23,9 +21,13 @@ export const createList = (nameList, priority) => {
     } else {
       articleEl.classList.add("low")
     }
-    linkEl.appendChild(articleEl)
+    liEl.appendChild(articleEl)
   
     let div1El = document.createElement("div")
+    
+    let linkEl = document.createElement("a")
+    linkEl.href = `./public/assets/pages/task.html?list_id=${list_id}`
+    div1El.appendChild(linkEl)
     let pEl = document.createElement("p")
     pEl.textContent = nameList
     let i1El = document.createElement("i")
@@ -34,7 +36,18 @@ export const createList = (nameList, priority) => {
     i2El.classList.add("fa-solid", "fa-pencil")
     let i3El = document.createElement("i")
     i3El.classList.add("fa-regular", "fa-trash-can")
-    div1El.appendChild(pEl)
+    i3El.addEventListener("click", e => {
+      // list_id = e.target.parentNode.parentNode.parentNode.id
+      deleteList(list_id)
+    })
+    i2El.addEventListener("click", e=> {
+      updateList(list_id, "nameList", "priority", "favoris")
+    })
+    i1El.addEventListener("click", e=> {
+      let favoris = e.target.classList.contains("fa-heart")
+      updateList(list_id, e.target ,"nameList", "priority", favoris)
+    })
+    linkEl.appendChild(pEl)
     div1El.appendChild(i1El)
     div1El.appendChild(i2El)
     div1El.appendChild(i3El)
@@ -52,12 +65,17 @@ export const createList = (nameList, priority) => {
     console.log(liEl)
   }
   
-  export const updateList = (list_id, typeEditList) => {
-    console.log("update list")
+  export const updateList = (list_id,targetHeart, nameList, priority, favoris) => {
+    if (favoris == true && targetHeart.classList.contains("fa-regular")) {
+      targetHeart.classList.replace("fa-regular", "fa-solid")
+    } else {
+      targetHeart.classList.replace("fa-solid", "fa-regular")
+    }
+    console.log("update list", list_id, nameList, priority, favoris)
   }
   
-  export const deleteList = (list_id, nameList) => {
-    console.log("delete list")
+  export const deleteList = (list_id) => {
+    console.log("delete list", list_id)
   }
   
   export const displayAllLists = (category) => {

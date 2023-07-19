@@ -3,7 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Listes de tâches</title>
 </head>
 <body>
     <header>
@@ -15,5 +20,34 @@
             </ul>
         </nav>
     </header>
+    <main id="mainTask">
+        <section id="">
+            <div id="divBtnPending">
+                <button type="button" id="btnCollapsePending"><span>Tâches en cours</span><i id="chevronPending" class="fa-sharp fa-solid fa-chevron-down"></i></button>
+            </div>
+            <ul id="listTaskPending">
+                <li>
+                    <article class="taskColor">
+                            <p>
+                            <i class="fa-regular fa-circle"></i>
+                            <label for="nameTask1">
+                                <input id="nameTask1" name="nameTask1" class="inputEmpty"></input>
+                            </label>
+                            <i class="fa-regular fa-trash-can disable"></i>
+                            </p>
+                    </article>
+                </li>
+            </ul>
+        </section>
+        <hr>
+        <section id="">
+            <div id="">
+                <button type="button" id="btnCollapseFinish"><span>Tâches terminées</span><i id="chevronFinish" class="fa-sharp fa-solid fa-chevron-down rotate "></i></button>
+            </div>
+            <ul id="listTaskFinish">
+                <li></li>
+            </ul>
+        </section>
+    </main>
 </body>
 </html>
