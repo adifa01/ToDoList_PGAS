@@ -1,0 +1,110 @@
+@import url("./reset.css");
+
+html {
+    font-size: 62.5%
+}
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: blue;
+    padding: 16px;
+    font-size: 1.6rem;
+    font-family: 'Oswald', sans-serif;
+}
+/* HEADER */
+header {
+    font-size: 3.6rem;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+}
+header>nav>ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+div#btnAdd {
+    height: 48px;
+    position: fixed;
+    bottom: 16px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+div#btnAdd > button {
+    padding-inline: 16px;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    border: 2px solid red;
+    border-radius: 8px;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    font-size: 2.4rem;
+}
+div#btnAdd > button > span {
+    margin-inline: auto;
+}
+/* Navbar Tab */
+#navTab {
+    margin-bottom: 16px;
+}
+#navTab>ul {
+    display: flex;
+    justify-content: space-evenly;
+}
+#navTab li {
+    padding-block: 8px;
+}
+#navTab .tabActive {
+    border-bottom: 2px solid white;
+}
+#navTab span {
+    padding-right: 8px;
+}
+section li {
+    margin-bottom: 8px;
+}
+article {
+    background-color: whitesmoke;
+    padding-block: 8px;
+    font-size: 2.4rem;
+    border-radius: 6px;
+
+}
+article>:first-child {
+    display: flex;
+    align-items: center;
+    padding-block: 8px;
+}
+article p {
+    margin-right: auto;
+    padding-left: 16px;
+}
+article i{
+    padding-right: 16px;
+}
+
+/* PROGRESS BAR */
+.progressBar-wrapper {
+    height: 8px;
+    width: 100%;
+    background-color: black;
+}
+.progressBar {
+    height: 8px;
+    /* width: 80%; update to js */
+    background-color: yellow;
+}
+
+/* PRIORITY LIST */
+.high {
+    background-color: red;
+}
+.medium {
+    background-color: orange;
+}
+.low {
+    background-color: green;
+}

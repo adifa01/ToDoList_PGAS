@@ -1,0 +1,89 @@
+[
+    {
+        "list_id": 1,
+        "name_list": "Pharmacie",
+        "priority": "high",
+        "favoris": false,
+        "status": "completed",
+        "tasks": [
+            {
+                "id": 1, 
+                "name_task": "Dafalgan",
+                "checked": true,
+                "order": 1
+            },
+            {
+                "id": 2,
+                "name_task": "Doliprane",
+                "checked": true,
+                "order": 2
+            },
+            {
+                "id": 3,
+                "name_task": "Strepsil",
+                "checked": true,
+                "order": 3
+            },
+            {
+                "id":4,
+                "name_task": "Pansements",
+                "checked": true,
+                "order":4
+            },
+            {
+                "id": 5,
+                "name_task": "Compresses",
+                "checked": true,
+                "order": 5
+            }
+        ]
+    },
+    {
+        "list_id":2,
+        "name_list": "Courses",
+        "priority": "low",
+        "favoris": "true",
+        "status": "ongoing",
+        "tasks": [
+            {
+                "id": 1, 
+                "name_task": "Pizza",
+                "checked": false,
+                "order": 1
+            },
+            {
+                "id": 2,
+                "name_task": "Concombres",
+                "checked": false,
+                "order": 2
+            },
+            {
+                "id": 3,
+                "name_task": "Dragibus",
+                "checked": false,
+                "order": 3
+            },
+            {
+                "id":4,
+                "name_task": "Pâtes",
+                "checked": false,
+                "order":4
+            },
+            {
+                "id": 5,
+                "name_task": "Fromage",
+                "checked": true,
+                "order": 1
+            }
+        ]
+    },
+    {
+        "list_id":3,
+        "name_list": "Voyage Parc St Pierre",
+        "priority": "medium",
+        "favoris": "true",
+        "status": "ongoing",
+        "tasks": []
+    }
+]
+
